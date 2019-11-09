@@ -4,4 +4,6 @@ services:
   - docker
 
 script:
-  - docker build -t tyroroto/dotnet-core-sdk-lambda .
+  - docker login -i $docker_u -p $docker_p
+  - docker build -t $docker_u/dotnet-core-sdk-lambda .
+  - docker push $docker_u/dotnet-core-sdk-lambda
